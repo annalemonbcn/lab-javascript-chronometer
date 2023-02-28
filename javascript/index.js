@@ -15,17 +15,22 @@ const splitsElement = document.getElementById('splits');
 
 function printTime() {
   // ... your code goes here
-  
+  printMinutes();
+  printSeconds();
 }
 
 function printMinutes() {
   // ... your code goes here
   console.log(`printMinute: ${chronometer.getMinutes()}`);
+  minDecElement.innerHTML = chronometer.getMinutes()[0];
+  minUniElement.innerHTML = chronometer.getMinutes()[1];
 }
 
 function printSeconds() {
   // ... your code goes here
   console.log(`printSeconds: ${chronometer.getSeconds()}`);
+  secDecElement.innerHTML = chronometer.getSeconds()[0];
+  secUniElement.innerHTML = chronometer.getSeconds()[1];
 }
 
 // ==> BONUS
@@ -94,7 +99,7 @@ btnLeftElement.addEventListener('click', () => {
 // Reset/Split Button
 btnRightElement.addEventListener('click', () => {
   // ... your code goes here
-  chronometer.reset();
+  // chronometer.reset();
   printMinutes();
   printSeconds();
 });

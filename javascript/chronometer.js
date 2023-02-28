@@ -12,7 +12,7 @@ class Chronometer {
   }
 
   getMinutes() {
-    console.log(`Current time: ${this.currentTime}`); // -> siempre es 0!!!!
+    console.log(`Current time: ${this.currentTime}`); // -> siempre es 0!!!! Pq?
     return Math.floor(this.currentTime / 60);
   }
 
