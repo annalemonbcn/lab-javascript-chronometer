@@ -7,12 +7,14 @@ class Chronometer {
   start(callback) {
     this.intervalId = setInterval(() => {
       this.currentTime += 1;
-      console.log(`currentTime: ${this.currentTime}`);
+      // Check if callback is passed
+      if(callback !== undefined){
+        callback();
+      }
     }, 1000);
   }
 
   getMinutes() {
-    console.log(`Current time: ${this.currentTime}`); // -> siempre es 0!!!! Pq?
     return Math.floor(this.currentTime / 60);
   }
 
@@ -20,8 +22,12 @@ class Chronometer {
     return this.currentTime % 60;
   }
 
+ /*  getMilliseconds(){
+    return (this.currentTime / 1000); // -> not working
+  } */
+
   computeTwoDigitNumber(value) {
-    if(value.toString.length === 1){
+    if(value.toString().length === 1){
       return '0' + value.toString();
     }
     return value.toString();
@@ -33,7 +39,6 @@ class Chronometer {
 
   reset() {
     this.currentTime = 0;
-    // Reset values in HTML
   }
 
   split() {
